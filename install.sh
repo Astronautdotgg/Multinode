@@ -1,15 +1,13 @@
 #!/bin/bash
-#  ███╗   ██╗ ██████╗ ██████╗ ███████╗███╗   ███╗ █████╗ ███████╗████████╗███████╗██████╗
-#  ████╗  ██║██╔═══██╗██╔══██╗██╔════╝████╗ ████║██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗
-#  ██╔██╗ ██║██║   ██║██║  ██║█████╗  ██╔████╔██║███████║███████╗   ██║   █████╗  ██████╔╝
-#  ██║╚██╗██║██║   ██║██║  ██║██╔══╝  ██║╚██╔╝██║██╔══██║╚════██║   ██║   ██╔══╝  ██╔══██╗
-#  ██║ ╚████║╚██████╔╝██████╔╝███████╗██║ ╚═╝ ██║██║  ██║███████║   ██║   ███████╗██║  ██║
-#  ╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
-#                                                           ╚╗ Pineapple and Brett 2019 ╔╝
-#                                                            ╚╗ Forked from NewCapital ╔╝
+# ███╗   ███╗██╗   ██╗██╗  ████████╗██╗███╗   ██╗ ██████╗ ██████╗ ███████╗
+# ████╗ ████║██║   ██║██║  ╚══██╔══╝██║████╗  ██║██╔═══██╗██╔══██╗██╔════╝
+# ██╔████╔██║██║   ██║██║     ██║   ██║██╔██╗ ██║██║   ██║██║  ██║█████╗  
+# ██║╚██╔╝██║██║   ██║██║     ██║   ██║██║╚██╗██║██║   ██║██║  ██║██╔══╝  
+# ██║ ╚═╝ ██║╚██████╔╝███████╗██║   ██║██║ ╚████║╚██████╔╝██████╔╝███████╗
+# ╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚══════╝
+#                                          ╚╗By Pineapple and Brett 2019╔╝   
 #
-# version 	v0.9.9
-# date    	2019-05-22
+# date    	2019-05-28
 #
 # function:	part of the masternode scripts, source the proper config file
 #
@@ -36,14 +34,14 @@ declare -r NETWORK_BASE_TAG="$(dd if=/dev/urandom bs=2 count=1 2>/dev/null | od 
 function showbanner() {
 echo $(tput bold)$(tput setaf 2)
 cat << "EOF"
- ███╗   ██╗ ██████╗ ██████╗ ███████╗███╗   ███╗ █████╗ ███████╗████████╗███████╗██████╗
- ████╗  ██║██╔═══██╗██╔══██╗██╔════╝████╗ ████║██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗
- ██╔██╗ ██║██║   ██║██║  ██║█████╗  ██╔████╔██║███████║███████╗   ██║   █████╗  ██████╔╝
- ██║╚██╗██║██║   ██║██║  ██║██╔══╝  ██║╚██╔╝██║██╔══██║╚════██║   ██║   ██╔══╝  ██╔══██╗
- ██║ ╚████║╚██████╔╝██████╔╝███████╗██║ ╚═╝ ██║██║  ██║███████║   ██║   ███████╗██║  ██║
- ╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
-                                                          ╚╗ Pineapple and Brett 2019 ╔╝
-                                                           ╚╗ Forked from NewCapital ╔╝
+███╗   ███╗██╗   ██╗██╗  ████████╗██╗███╗   ██╗ ██████╗ ██████╗ ███████╗
+████╗ ████║██║   ██║██║  ╚══██╔══╝██║████╗  ██║██╔═══██╗██╔══██╗██╔════╝
+██╔████╔██║██║   ██║██║     ██║   ██║██╔██╗ ██║██║   ██║██║  ██║█████╗  
+██║╚██╔╝██║██║   ██║██║     ██║   ██║██║╚██╗██║██║   ██║██║  ██║██╔══╝  
+██║ ╚═╝ ██║╚██████╔╝███████╗██║   ██║██║ ╚████║╚██████╔╝██████╔╝███████╗
+╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚══════╝
+                                          ╚╗ Pineapple and Brett 2019 ╔╝
+                                                           
 EOF
 echo "$(tput sgr0)$(tput setaf 3)Have fun, this is crypto after all!$(tput sgr0)"
 echo "$(tput setaf 6)Donations (BTC): 33ENWZ9RCYBG7nv6ac8KxBUSuQX64Hx3x3"
@@ -78,7 +76,8 @@ function show_help(){
     echo "Usage example:";
     echo "install.sh (-p|--project) string [(-h|--help)] [(-n|--net) int] [(-c|--count) int] [(-r|--release) string] [(-w|--wipe)] [(-u|--update)] [(-x|--startnodes)]";
     echo "Options:";
-    echo "-h or --help: Displays this information.";
+    echo "-h or --help: Displays this information."
+
     echo "-p or --project string: Project to be installed. REQUIRED.";
     echo "-n or --net: IP address type t be used (4 vs. 6).";
     echo "-c or --count: Number of masternodes to be installed.";
@@ -281,7 +280,7 @@ function create_mn_configuration() {
 
         # create one config file per masternode
         for NUM in $(seq 1 ${count}); do
-        PASS=$(date | md5sum | cut -c1-24)
+        PASS=$(date | md5sum | cut -c1-24)  
 
             # we dont want to overwrite an existing config file
             if [ ! -f ${MNODE_CONF_BASE}/${CODENAME}_n${NUM}.conf ]; then
@@ -296,15 +295,15 @@ function create_mn_configuration() {
                     cp ${SCRIPTPATH}/config/default.conf ${MNODE_CONF_BASE}/${CODENAME}_n${NUM}.conf                  &>> ${SCRIPT_LOGFILE}
                 fi
                 # replace placeholders
-                echo "running sed on file ${MNODE_CONF_BASE}/${CODENAME}_n${NUM}.conf"                                &>> ${SCRIPT_LOGFILE}
-                sed -e "s/XXX_GIT_PROJECT_XXX/${CODENAME}/" -e "s/XXX_NUM_XXY/${NUM}]/" -e "s/XXX_NUM_XXX/${NUM}/" -e "s/XXX_PASS_XXX/${PASS}/" -e "s/XXX_IPV6_INT_BASE_XXX/[${IPV6_INT_BASE}/" -e "s/XXX_NETWORK_BASE_TAG_XXX/${NETWORK_BASE_TAG}/" -e "s/XXX_MNODE_INBOUND_PORT_XXX/${MNODE_INBOUND_PORT}/" -i ${MNODE_CONF_BASE}/${CODENAME}_n${NUM}.conf
+                read -p "Genkey for MN ${NUM}:" priv_genkey
+                echo "Filling placeholders on file/sed on file ${MNODE_CONF_BASE}/${CODENAME}_n${NUM}.conf"                                &>> ${SCRIPT_LOGFILE}
+                sed -e "s/XXX_GIT_PROJECT_XXX/${CODENAME}/" -e "s/XXX_NUM_XXY/${NUM}]/" -e "s/XXX_NUM_XXX/${NUM}/" -e "s/XXX_PASS_XXX/${PASS}/" -e "s/XXX_IPV6_INT_BASE_XXX/[${IPV6_INT_BASE}/" -e "s/XXX_priv_XXX/[${priv_genkey}/"-e "s/XXX_NETWORK_BASE_TAG_XXX/${NETWORK_BASE_TAG}/" -e "s/XXX_MNODE_INBOUND_PORT_XXX/${MNODE_INBOUND_PORT}/" -i ${MNODE_CONF_BASE}/${CODENAME}_n${NUM}.conf
                 if [ "$startnodes" -eq 1 ]; then
                     #uncomment masternode= and masternodeprivkey= so the node can autostart and sync
                     sed 's/\(^.*masternode\(\|privkey\)=.*$\)/#\1/' -i ${MNODE_CONF_BASE}/${CODENAME}_n${NUM}.conf
                 fi
             fi
         done
-
 }
 
 #
