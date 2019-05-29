@@ -34,16 +34,17 @@ declare -r DO_NET_CONF="/etc/network/interfaces.d/50-cloud-init.cfg"
 declare -r NETWORK_BASE_TAG="$(dd if=/dev/urandom bs=2 count=1 2>/dev/null | od -x -A n | sed -e 's/^[[:space:]]*//g')"
 
 function showbanner() {
-if [ $project = "bitcorn" ]; then
+if [ $project = "bitcorn" ]; 
+then
     echo $(tput bold)$(tput setaf 2)
     cat << "EOF"
-██████╗ ██╗████████╗ ██████╗ ██████╗ ██████╗ ███╗   ██╗
-██╔══██╗██║╚══██╔══╝██╔════╝██╔═══██╗██╔══██╗████╗  ██║
-██████╔╝██║   ██║   ██║     ██║   ██║██████╔╝██╔██╗ ██║
-██╔══██╗██║   ██║   ██║     ██║   ██║██╔══██╗██║╚██╗██║
-██████╔╝██║   ██║   ╚██████╗╚██████╔╝██║  ██║██║ ╚████║
-╚═════╝ ╚═╝   ╚═╝    ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝
-                         ╚╗ Pineapple and Brett 2019 ╔╝                                                                            
+    ██████╗ ██╗████████╗ ██████╗ ██████╗ ██████╗ ███╗   ██╗
+    ██╔══██╗██║╚══██╔══╝██╔════╝██╔═══██╗██╔══██╗████╗  ██║
+    ██████╔╝██║   ██║   ██║     ██║   ██║██████╔╝██╔██╗ ██║
+    ██╔══██╗██║   ██║   ██║     ██║   ██║██╔══██╗██║╚██╗██║
+    ██████╔╝██║   ██║   ╚██████╗╚██████╔╝██║  ██║██║ ╚████║
+    ╚═════╝ ╚═╝   ╚═╝    ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝
+                            ╚╗ Pineapple and Brett 2019 ╔╝                                                                            
 EOF 
 echo "Questions: @pineapple or @brett in Pure Investments Discord"
 else
