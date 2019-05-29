@@ -772,7 +772,7 @@ while true; do
                     if [ -n "$1" ];
                     then
                         project="$1";
-                        if ["$1" = "bitcorn"]; then
+                        if ["$1" == "bitcorn"]; then
                         echo "HELLLOOOOOOOO THEREEE"
                         fi
                         shift;
