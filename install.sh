@@ -45,7 +45,6 @@ if [ $project = "bitcorn" ]; then
 ╚═════╝ ╚═╝   ╚═╝    ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝
                          ╚╗ Pineapple and Brett 2019 ╔╝                                                                            
 EOF 
-echo "Questions: @pineapple or @brett in Pure Investments Discord"
 else
 echo $(tput bold)$(tput setaf 2)
 cat << "EOF"
