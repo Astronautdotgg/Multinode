@@ -34,18 +34,19 @@ declare -r DO_NET_CONF="/etc/network/interfaces.d/50-cloud-init.cfg"
 declare -r NETWORK_BASE_TAG="$(dd if=/dev/urandom bs=2 count=1 2>/dev/null | od -x -A n | sed -e 's/^[[:space:]]*//g')"
 
 function showbanner() {
-    if [ $project = "bitcorn" ]; then
-                        echo $(tput bold)$(tput setaf 2)
-                        cat << "EOF"
-                        oooooooooo.  ooooo ooooooooooooo   .oooooo.     .oooooo.   ooooooooo.   ooooo      ooo 
-                        `888'   `Y8b `888' 8'   888   `8  d8P'  `Y8b   d8P'  `Y8b  `888   `Y88. `888b.     `8' 
-                        888     888  888       888      888          888      888  888   .d88'  8 `88b.    8  
-                        888oooo888'  888       888      888          888      888  888ooo88P'   8   `88b.  8  
-                        888    `88b  888       888      888          888      888  888`88b.     8     `88b.8  
-                        888    .88P  888       888      `88b    ooo  `88b    d88'  888  `88b.   8       `888  
-                        o888bood8P'  o888o     o888o      `Y8bood8P'   `Y8bood8P'  o888o  o888o o8o        `8                                                                                  
-EOF
-                        fi
+if [ $project = "bitcorn" ]; then
+    echo $(tput bold)$(tput setaf 2)
+    cat << "EOF"
+██████╗ ██╗████████╗ ██████╗ ██████╗ ██████╗ ███╗   ██╗
+██╔══██╗██║╚══██╔══╝██╔════╝██╔═══██╗██╔══██╗████╗  ██║
+██████╔╝██║   ██║   ██║     ██║   ██║██████╔╝██╔██╗ ██║
+██╔══██╗██║   ██║   ██║     ██║   ██║██╔══██╗██║╚██╗██║
+██████╔╝██║   ██║   ╚██████╗╚██████╔╝██║  ██║██║ ╚████║
+╚═════╝ ╚═╝   ╚═╝    ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝
+                         ╚╗ Pineapple and Brett 2019 ╔╝                                                                            
+EOF 
+echo "Questions: @pineapple or @brett in Pure Investments Discord"
+else
 echo $(tput bold)$(tput setaf 2)
 cat << "EOF"
  ███╗   ██╗ ██████╗ ██████╗ ███████╗███╗   ███╗ █████╗ ███████╗████████╗███████╗██████╗
@@ -55,12 +56,10 @@ cat << "EOF"
  ██║ ╚████║╚██████╔╝██████╔╝███████╗██║ ╚═╝ ██║██║  ██║███████║   ██║   ███████╗██║  ██║
  ╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
                                                           ╚╗ Pineapple and Brett 2019 ╔╝
-                                                           ╚╗ Forked from NewCapital ╔╝
+                                                           
 EOF
-echo "$(tput sgr0)$(tput setaf 3)Have fun, this is crypto after all!$(tput sgr0)"
-echo "$(tput setaf 6)Donations (BTC): 33ENWZ9RCYBG7nv6ac8KxBUSuQX64Hx3x3"
 echo "Questions: @pineapple or @brett in Pure Investments Discord"
-
+fi
 }
 
 # /*
