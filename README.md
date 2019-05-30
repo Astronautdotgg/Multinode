@@ -1,27 +1,31 @@
-# Nodemaster
+# Multinode
 
-The **Nodemaster** scripts is a collection of utilities to manage, setup and update masternode instances.
+----
+## What is multinode?
 
-This project was previously developed by NewCapital but lacked project updates. We forked it and Pineapple & Brett have been passionate about making this even better by including more features and coins/tokens. 
+
+The **Multinode** scripts is a collection of utilities to manage, setup and update masternode instances.
+
+The core of this application is forked from an abandoned project, and we've been passionate about making this even better by including more features and coins/tokens. 
 We are quite confident this is the single best and almost effortless way to setup different crypto masternodes, without bothering too much about the setup part.
 
 If this script helped you in any way, please contribute some feedback. If you need support, contact Brett or Pineapple in either of these Discords: <a href="https://discord.gg/PpxbJ3u">Pure Investments</a>   or   <a href="https://discord.gg/">CTTV</a>
 
-
-Feel free to use out reflink to signup and receive a bonus w/ vultr:
-<a href="https://www.vultr.com/?ref=7755704"><img src="https://www.vultr.com/media/banner_2.png" width="468" height="60"></a>
-
 ## Supported masternode projects
 
 All PIVX based coins can be added to this reository. Currently supported is:
-BITCORN (CORN) and 
-LEMONAD (LAD)
+
+* BITCORN (CORN)
+* LEMONAD (LAD)
 
 ---
 
-**NOTE on the VPS choice for starters**
+##Recommended VPS provider
 
 **Vultr** is highly recommended for this kind of setup as thats what we are using for testing and personal use. Make sure to click "IPv6 during installation of the server and you should be good to go. 
+
+Feel free to use out reflink to signup and receive a bonus w/ vultr:
+<a href="https://www.vultr.com/?ref=7755704"><img src="https://www.vultr.com/media/banner_2.png" width="468" height="60"></a>
 
 ---
 
@@ -40,38 +44,48 @@ Comparing with building from source manually, you will benefit from using this s
 * This script needs to run as root, the masternodes will and should not!
 * It's ipv6 enabled!
 
+#Installation
 
-Below are the complex (and juicy) installation commands. Further below is a full guide:
+Below is a guide meant to help you install your masternodes smooth like butter
 
-**Install & configure 4 BITCORN masternodes with IPv6 support:**
+####1.0 - Clone and open project on your VPS
 
-```bash
-./install.sh -p bitcorn -c 4 -n 6
-```
+VPS:
 
-**Update daemon of previously installed BITCORN masternodes to the latest version:**
+    git clone https://github.com/cisnes/multinode.git && cd multinode
 
-```bash
-./install.sh -p bitcorn -u
-```
 
-**Install 6 BITCORN masternodes with the git release tag "tags/v3.2.0.6"**
+####1.1 - Send collateral to your MN adresses
 
-```bash
-./install.sh -p bitcorn -c 6 -r "tags/v1.2.0.0"
-```
+Make one new receiving address for each of your new masternodes, and send **exactly** the collateral to each of them. You can find collateral in the white paper/reward structure.
 
-**Wipe all BITCORN masternode data:**
+####1.2 - Generate private keys for your masternodes
+In your wallet, open the debug console window and type:
 
-```bash
-./install.sh -p lad -w
-```
+    masternode genkey
 
-**Install 2 BITCORN masternodes and configure sentinel monitoring (not recently tested, use at own risk):**
+for each of your new masternodes, and copy these to your masternodes.conf file which you can find in your coins data-folder. 
 
-```bash
-./install.sh -p lad -c 2 -s
-```
+####1.3 - Copy Txhash and OutputID to masternodes.conf
+
+Still in the debug console, type:
+    
+    masternode outputs
+
+And copy the Txhash and OutputID to masternodes.conf and past them in the correct format. Note: The formatting of the file is very strict, and needs to be followed exactly as the example below. Do not have any empty lines in the project and do one MN per line:
+
+    MN01 PRIVATEKEYGOESHERE TXHASHGOESHERE OUTPUTIDGOESHERE
+    MN02 PRIVATEKEYGOESHERE TXHASHGOESHERE OUTPUTIDGOESHERE
+
+####2.0
+By now you have prepared your wallet with the necessary variables and it's time to initialize script and make masternodes. 
+
+The script you will be using is in the *multinode* folder and is called install.sh. You're calling this by using ./ as a prefix. The first flag -p is the project. Currently supported projects is stated further above in the readme file. The second flag -c is the count. This is the total number of MNs you want to have installed. And the third flag is -n which is indicating you will be using network settings for IPv6 (required to have multiple MNs)
+
+The following script will install **3 bitcorn** masternodes using **IPv6**.
+
+    ./install.sh -p bitcorn -c 4 -n 6
+Take not of this: The **count/-c** is the **total** number of masternodes of that coin you want to have installed on the VPS. If you already have 3 MNs and want to install 3 more, you need to use `-c 6`. The first 3 masternodes are not affected. 
 
 ## Options
 
@@ -80,7 +94,7 @@ The _install.sh_ script support the following parameters:
 | Long Option  | Short Option | Values              | description                                                         |
 | :----------- | :----------- | ------------------- | ------------------------------------------------------------------- |
 | --project    | -p           | "bitcorn"           | shortname for the project                                           |
-| --net        | -n           | "4" / "6"           | ip type for masternode. (ipv)6 is default                           |
+| --net        | -n           | "4" / "6"           | ip typae for masternode. (ipv)6 is default                           |
 | --release    | -r           | e.g. "tags/v3.2.0.6"| a specific git tag/branch, defaults to latest tested                |
 | --count      | -c           | number              | amount of masternodes to be configured                              |
 | --update     | -u           | --                  | update specified masternode daemon, combine with -p flag            |
@@ -196,3 +210,27 @@ to install one more, you need to use the number 5 on the -c flag. Like so:
 This will install one more MN in addition to your old 4. The old MNs are not affected.
 
 After that, do the steps described in the main-installation part.
+
+
+----
+## markdown quick reference
+# headers
+
+*emphasis*
+
+**strong**
+
+* list
+
+>block quote
+
+    code (4 spaces indent)
+[links](https://wikipedia.org)
+
+----
+## changelog
+* 17-Feb-2013 re-design
+
+----
+## thanks
+* [markdown-js](https://github.com/evilstreak/markdown-js)
