@@ -18,6 +18,7 @@ All PIVX based coins can be added to this reository. Currently supported is:
 * BITCORN (CORN)
 * LEMONAD (LAD)
 * Carbon Zero (CZE)
+* Find Your Developer (FYD)
 ---
 
 ## Donations
