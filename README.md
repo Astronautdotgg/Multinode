@@ -13,21 +13,30 @@ If this script helped you in any way, please contribute some feedback. If you ne
 
 ## Supported masternode projects
 
-All PIVX based coins can be added to this reository. Currently supported is:
+All PIVX based coins can be added to this reository. Current supported and updated coins are:
 
-* BITCORN (CORN)
-* LEMONAD (LAD)
+* BitCORN (CORN)
+* LemonAd (LAD)
 * Carbon Zero (CZE)
 * Find Your Developer (FYD)
 ---
 
-## Donations
+# Donations
 
-This is licenced for free, but donations are very welcome. It will help me find motivation to update and improve it. 
+This is licenced for free, but donations are very welcome. It will help me find motivation to update and improve it. This script will probably save you tons of money in the long run as you need few VPSs as well! 
 
 Bitcoin:
 
     1HUpAVhahnnHxAFTWzXX4t8SNza5qES1aS
+
+Ethereum:
+
+    0x67b06be05a0e93fb58b44c561ae3e9440e6c4a47
+
+DOGE:
+    
+    DDiwzGsPeqQTTuSQX5wyijiEPaFDZvJ9hG
+
 
 
 ## Recommended VPS provider
