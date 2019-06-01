@@ -40,7 +40,7 @@ Feel free to use out reflink to signup and receive a bonus w/ vultr:
 
 ## About / Background
 
-After doing counless masternode installations and administrating the past two years, we decided to share our modified script with the public.
+After doing countless masternode installations and administrating the past two years, we decided to share our modified script with the public.
 
 Comparing with building from source manually, you will benefit from using this script in the following way(s):
 
@@ -94,7 +94,7 @@ The script you will be using is in the *multinode* folder and is called install.
 The following script will install **3 bitcorn** masternodes using **IPv6**.
 
     ./install.sh -p bitcorn -c 4 -n 6
-    
+
 Take note of this: The **count/-c** is the **total** number of masternodes of that coin you want to have installed on the VPS. If you already have 3 MNs and want to install 3 more, you need to use `-c 6`. The first 3 masternodes are not affected. 
 
 
