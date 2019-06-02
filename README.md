@@ -181,7 +181,7 @@ The _install.sh_ script support the following parameters:
 | Long Option  | Short Option | Values              | description                                                         |
 | :----------- | :----------- | ------------------- | ------------------------------------------------------------------- |
 | --project    | -p           | "bitcorn"           | shortname for the project                                           |
-| --net        | -n           | "4" / "6"           | ip typae for masternode. (ipv)6 is default                           |
+| --net        | -n           | "4" / "6"           | ip typae for masternode. (ipv)6 is default                          |
 | --release    | -r           | e.g. "tags/v3.2.0.6"| a specific git tag/branch, defaults to latest tested                |
 | --count      | -c           | number              | amount of masternodes to be configured                              |
 | --update     | -u           | --                  | update specified masternode daemon, combine with -p flag            |
@@ -202,4 +202,18 @@ to install one more, you need to use the number 5 on the -c flag. Like so:
 This will install one more MN in addition to your old 4. The old MNs are not affected.
 
 After that, do the steps described in the main-installation part.
-s
+
+
+# Troubleshooting
+
+### Error, couldn't connect to servre
+
+This error will appear if the daemon for that node is not running. The way to start the node is by running this command:
+
+    bitcornd -daemon -pid=/var/lib/masternodes/bitcorn2/bitcorn.pid -conf=/etc/masternodes/bitcorn_n2conf -datadir=/var/lib/masternodes/bitcorn2 -listen=0
+
+And
+
+    systemctl restart bitcorn_n2
+
+As always, replace "bitcorn" with your coin and the number with the node failing. This will kickstart it and it will say something like: "Bitcorn server starting" if it's successful. 
