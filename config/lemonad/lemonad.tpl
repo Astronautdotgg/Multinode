@@ -13,7 +13,7 @@ externalip=XXX_IPV6_INT_BASE_XXX:XXX_NETWORK_BASE_TAG_XXX::XXX_NUM_XXY:XXX_MNODE
 #############################
 # nodes we want to stick to
 #############################
-addnode=68.183.65.69:52271 add
+addnode=68.183.65.69:52271
 addnode=192.241.142.128:52271
 addnode=157.230.137.86:52271
 addnode=68.183.185.23:52271
@@ -22,7 +22,7 @@ addnode=142.93.34.50:52271
 # masternode specific settings
 ################################
 masternode=1
-#### INSERT YOUR MASTERNODE PRIVATEKEY BELOW ####################################################
+#### INSERT YOUR MASTERNODE PRIVATEKEY BELOW ################   ####################################
 masternodeprivkey=XXX_priv_XXX
 #################################################################################################
 #
