@@ -67,7 +67,11 @@ Comparing with building from source manually, you will benefit from using this s
 
 Below is a guide meant to help you install your masternodes smooth like butter
 
-#### 1.0 - Clone and open project on your VPS
+### 0.0 - Create VPS
+
+Only Vultr servers are tested with this script, so it's highly recommended you use their platform for this. During the installation, it's crucial to check "Enable IPv6" as we will be using this. When done, proceed to the next step. 
+
+### 1.0 - Clone and open project on your VPS
 
 VPS:
 
