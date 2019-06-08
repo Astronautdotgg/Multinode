@@ -6,10 +6,10 @@
 
 The **Multinode** scripts is a collection of utilities to manage, setup and update masternode instances.
 
-The core of this application is forked from an abandoned project, and we've been passionate about making this even better by including more features and coins/tokens. 
-We are quite confident this is the single best and almost effortless way to setup different crypto masternodes, without bothering too much about the setup part.
+The core of this application is forked from project known as Nodemaster, and we've been passionate about making this even better by including more features and adding BITCORN support to it. 
+We are quite confident this is the single best and almost effortless way to setup several Bitcorn MNs on one VPS without bothering too much about the setup part.
 
-If this script helped you in any way, please contribute some feedback. If you need support, contact Brett or Pineapple in either of these Discords: <a href="https://discord.gg/PpxbJ3u">Pure Investments</a>   or   <a href="https://discord.gg/">CTTV</a>
+If this script helped you in any way, please contribute some feedback. If you need support, contact Brett or Pineapple in either of these Discords: <a href="https://discord.gg/">CTTV</a>
 
 ## Supported masternode projects
 
@@ -78,14 +78,14 @@ VPS:
     git clone https://github.com/cisnes/multinode.git && cd multinode
 
 
+### 1.1 - Send collateral to your MN adresses
+
+Make one new receiving address for each of your new masternodes, and send **exactly** the collateral to each of them. You can find collateral in the white paper/reward structure.
+
 
 ## IMPORTANT
 
 If you already have private keys and txhashes from your existing servers you want to migrate over to the script, you can reuse these. Just shut down the old servers and skip to step 2.0.
-
-### 1.1 - Send collateral to your MN adresses
-
-Make one new receiving address for each of your new masternodes, and send **exactly** the collateral to each of them. You can find collateral in the white paper/reward structure.
 
 ### 1.2 - Generate private keys for your masternodes
 In your wallet, open the debug console window and type:
@@ -102,8 +102,8 @@ Still in the debug console, type:
 
 And copy the Txhash and OutputID to masternodes.conf and past them in the correct format. Note: The formatting of the file is very strict, and needs to be followed exactly as the example below. Do not have any empty lines in the project and do one MN per line:
 
-    MN01 IPGOESHERE PRIVATEKEYGOESHERE TXHASHGOESHERE OUTPUTIDGOESHERE
-    MN02 IPGOESHERE PRIVATEKEYGOESHERE TXHASHGOESHERE OUTPUTIDGOESHERE
+    MN01 IP1GOESHERE PRIVATEKEY1GOESHERE TXHASH1GOESHERE OUTPUTID1GOESHERE
+    MN02 IP2GOESHERE PRIVATEKEY2GOESHERE TXHASH2GOESHERE OUTPUTID2GOESHERE
 
 ### 2.0 Install the masternodes
 By now you have prepared your wallet with the necessary variables and it's time to initialize script and make masternodes. 
@@ -219,7 +219,7 @@ After that, do the steps described in the main-installation part.
 
 This error will appear if the daemon for that node is not running. The way to start the node is by running this command:
 
-    bitcornd -daemon -pid=/var/lib/masternodes/bitcorn2/bitcorn.pid -conf=/etc/masternodes/bitcorn_n2.conf -datadir=/var/lib/masternodes/bitcorn2 
+    bitcornd -daemon -pid=/var/lib/masternodes/bitcorn2/bitcorn.pid -conf=/etc/masternodes/bitcorn_n2conf -datadir=/var/lib/masternodes/bitcorn2 
 
 And
 
